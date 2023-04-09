@@ -130,19 +130,9 @@ img {
   width: 100%;
   background-color: var(--main-color);
   left: 0;
+  border-radius: 4px;
   bottom: -1px;
   opacity: 1;
-}
-.header-link::after {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 4px;
-  width: 100%;
-  background-color: var(--main-color);
-  left: 0;
-  bottom: -1px;
-  opacity: 0;
   transition-property: opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -575,9 +565,16 @@ img {
   gap: 24px;
 }
 
-.customers-item {
+.customer-item {
   width: 188px;
   height: 88px;
+}
+
+.customers-logo-icon {
+  fill: #8e8f99;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link {
@@ -586,27 +583,21 @@ img {
   height: 100%;
   border: 1px solid #8e8f99;
   border-radius: 4px;
-  fill: #8e8f99;
-  align-items: center;
-  justify-content: center;
-  transition-property: border-color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.customers-logo {
-  fill: #8e8f99;
 
-  transition-property: fill;
+  align-items: center;
+
+  justify-content: center;
+
+  transition-property: border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:is(:hover, :focus) {
   border-color: var(--main-color);
-  fill: var(--main-color);
 }
 
-.customers-link:is(:hover, :focus) > .customers-logo {
+.customers-link:is(:hover, :focus) > .customers-logo-icon {
   fill: var(--main-color);
 }
 .backdrop {
@@ -640,6 +631,9 @@ img {
 }
 
 .modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
   display: flex;
   margin-left: auto;
   padding: 0;
@@ -652,6 +646,11 @@ img {
   justify-content: center;
   cursor: pointer;
 }
+.modal-close-btn:is(:hover, :focus) {
+  fill: var(--color-white);
+  background-color: var(--main-color);
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
