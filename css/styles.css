@@ -123,15 +123,6 @@ img {
 }
 
 .header-link.current::after {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 4px;
-  width: 100%;
-  background-color: var(--main-color);
-  left: 0;
-  border-radius: 4px;
-  bottom: -1px;
   opacity: 1;
 }
 .header-link::after {
