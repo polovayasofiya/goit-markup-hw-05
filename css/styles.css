@@ -527,7 +527,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--text-color);
 }
-.pic-link:hover .pic-cover-text {
+.pic-link:is(:hover, :focus) .pic-cover-text {
   transform: translate(0);
 }
 .pic-cover-text {
